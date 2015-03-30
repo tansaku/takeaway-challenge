@@ -1,9 +1,17 @@
 class Order
-  def chicken number
-    number
+  def initialize
+    @total = 0
+  end
+
+  def method_missing *args
+    @total += args[1]
   end
 
   def total
-    '£3'
+    "£#{@total}"
   end
+
+  private
+
+  attr_writer :total
 end

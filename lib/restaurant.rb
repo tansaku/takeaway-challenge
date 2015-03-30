@@ -3,9 +3,9 @@ class Restaurant
     { chicken: '£1', fish: '£1' }
   end
 
-  def order item, number
+  def order hash
     order = Order.new
-    order.send item, number
+    hash.each { |k, v| order.send k, v }
     order
   end
 end
