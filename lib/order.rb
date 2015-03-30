@@ -1,10 +1,12 @@
 class Order
-  def initialize
+  def initialize restaurant
     @total = 0
+    @restaurant = restaurant
   end
 
   def method_missing *args
-    @total += args[1]
+    price = extract_numeric_price(@restaurant.dishes[args[0]])
+    @total += args[1] * price
   end
 
   def total
@@ -14,4 +16,8 @@ class Order
   private
 
   attr_writer :total
+
+  def extract_numeric_price in_pounds
+    in_pounds[1..-1].to_i
+  end
 end

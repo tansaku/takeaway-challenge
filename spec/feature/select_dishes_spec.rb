@@ -7,6 +7,6 @@ feature 'select dishes' do
   scenario 'select two dishes' do
     restaurant = Restaurant.new
     order = restaurant.order(chicken: 3, fish: 2)
-    expect(order.total).to eq('£5')
+    expect(order.total).to eq('£7')
   end
 end

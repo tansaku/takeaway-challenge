@@ -2,7 +2,7 @@ require 'restaurant'
 
 describe Restaurant do
   it 'can list all dishes' do
-    expect(subject.dishes).to eq(chicken: '£1', fish: '£1')
+    expect(subject.dishes).to eq(chicken: '£1', fish: '£2')
   end
   it 'can create single item order' do
     expect_any_instance_of(Order).to receive(:chicken).with(3)
